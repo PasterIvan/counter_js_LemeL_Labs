@@ -14,24 +14,24 @@ function CreateCounter(count = 0) {
     };
 
     const setCounter = () => {
-        buttonInc.disabled = this.counter >= inputMax.valueAsNumber
-        buttonDec.disabled = this.counter <= inputMin.valueAsNumber
+        buttonInc.disabled = this.counter >= inputMax.valueAsNumber;
+        buttonDec.disabled = this.counter <= inputMin.valueAsNumber;
 
         if (inputMin.valueAsNumber > inputMax.valueAsNumber) {
-            return value.innerHTML = 'ERROR: The Max value cannot be less than the Min'
+            return value.innerHTML = 'ERROR: The MAX value cannot be less than the MIN';
         } else if (inputMin.valueAsNumber > this.counter) {
-            this.counter = inputMin.valueAsNumber
-            return value.innerHTML = "counter: " + inputMin.valueAsNumber
+            this.counter = inputMin.valueAsNumber;
+            return value.innerHTML = "counter: " + inputMin.valueAsNumber;
         } else if (inputMax.valueAsNumber < this.counter) {
-            this.counter = inputMax.valueAsNumber
-            return value.innerHTML = "counter: " + inputMax.valueAsNumber
+            this.counter = inputMax.valueAsNumber;
+            return value.innerHTML = "counter: " + inputMax.valueAsNumber;
         } else {
-            return value.innerHTML = "counter: " + this.counter
+            return value.innerHTML = "counter: " + this.counter;
         }
     }
 
     const setMin = () => {
-        return inputMin.valueAsNumber
+        return inputMin.valueAsNumber;
     }
 
     const setMax = () => {
@@ -52,8 +52,8 @@ function CreateCounter(count = 0) {
     inputMin.type = 'number';
     inputMin.valueAsNumber = 0;
     inputMin.placeholder = inputMin.value;
-    inputMin.onchange = setMin
-    inputMin.addEventListener('change', setCounter )
+    inputMin.onchange = setMin;
+    inputMin.addEventListener('change', setCounter );
     document.body.append(inputMin);
 
     //Max Value span
@@ -66,8 +66,8 @@ function CreateCounter(count = 0) {
     inputMax.type = 'number';
     inputMax.valueAsNumber = this.counter;
     inputMax.placeholder = inputMax.value;
-    inputMax.onchange = setMax
-    inputMax.addEventListener('change', setCounter)
+    inputMax.onchange = setMax;
+    inputMax.addEventListener('change', setCounter);
     document.body.append(inputMax);
 
     //Button Decrement
